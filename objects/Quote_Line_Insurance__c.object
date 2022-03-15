@@ -145,6 +145,7 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
@@ -152,113 +153,73 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
-    <label>Address</label>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <label>Quote Line Insurance</label>
     <nameField>
-        <displayFormat>A-{0000000000}</displayFormat>
-        <label>Address Name</label>
+        <displayFormat>Qli-{0000000000}</displayFormat>
+        <label>Quote Line Insurance Name</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Addresses</pluralLabel>
-    <searchLayouts>
-        <customTabListAdditionalFields>Address_Line1__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Address_Line2__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Address_Line3__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>City__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Country__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Postal_Code__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Provience__c</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>Address_Line1__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Address_Line2__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Address_Line3__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>City__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Country__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Postal_Code__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Provience__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Active__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Address_Line1__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Address_Line2__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Address_Line3__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Active__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>City__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Country__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Postal_Code__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Provience__c</lookupPhoneDialogsAdditionalFields>
-        <searchFilterFields>Address_Line1__c</searchFilterFields>
-        <searchFilterFields>Address_Line2__c</searchFilterFields>
-        <searchFilterFields>Address_Line3__c</searchFilterFields>
-        <searchFilterFields>City__c</searchFilterFields>
-        <searchFilterFields>Country__c</searchFilterFields>
-        <searchFilterFields>Postal_Code__c</searchFilterFields>
-        <searchFilterFields>Provience__c</searchFilterFields>
-        <searchResultsAdditionalFields>Address_Line1__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Address_Line2__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Address_Line3__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Active__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Country__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Postal_Code__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Provience__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>Private</sharingModel>
+    <pluralLabel>Quote Line Insurance</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
     <fields>
-        <fullName>City__c</fullName>
-        <externalId>false</externalId>
-        <label>City</label>
-        <length>100</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Active__c</fullName>
+        <fullName>Paid__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
-        <label>Active</label>
+        <label>Paid</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Country__c</fullName>
+        <fullName>Percent__c</fullName>
         <externalId>false</externalId>
-        <label>Country</label>
+        <label>Percent</label>
+        <precision>18</precision>
         <required>false</required>
+        <scale>0</scale>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Canada</fullName>
-                    <default>false</default>
-                    <label>Canada</label>
-                </value>
-                <value>
-                    <fullName>USA</fullName>
-                    <default>false</default>
-                    <label>USA</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Percent</type>
     </fields>
     <fields>
-        <fullName>Provience__c</fullName>
+        <fullName>Deductible__c</fullName>
         <externalId>false</externalId>
-        <label>Province</label>
-        <length>10</length>
+        <label>Deductible</label>
+        <precision>18</precision>
         <required>false</required>
+        <scale>0</scale>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Currency</type>
     </fields>
     <fields>
-        <fullName>Postal_Code__c</fullName>
+        <fullName>Payor_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Postal Code</label>
+        <label>Payor Name</label>
+        <referenceTo>Insurance__c</referenceTo>
+        <relationshipLabel>Quote Line Insurance</relationshipLabel>
+        <relationshipName>Quote_Line_Insurance</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quote_Line_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Quote Line Item</label>
+        <referenceTo>QuoteLineItem</referenceTo>
+        <relationshipLabel>Quote Line Insurance</relationshipLabel>
+        <relationshipName>Quote_Line_Insurance</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Price_Drug__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Price - Drug</label>
         <length>100</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -266,33 +227,24 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Address_Line1__c</fullName>
+        <fullName>Sales_Price_Payor__c</fullName>
         <externalId>false</externalId>
-        <label>Address Line1</label>
-        <length>150</length>
+        <label>Sales Price - Payor</label>
+        <length>100</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <fields>
-        <fullName>Address_Line2__c</fullName>
-        <externalId>false</externalId>
-        <label>Address Line2</label>
-        <length>120</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Address_Line3__c</fullName>
-        <externalId>false</externalId>
-        <label>Address Line3</label>
-        <length>150</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
+    <webLinks>
+        <fullName>Back</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Back</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>{!URLFOR( $Action.QuoteLineItem.View , Quote_Line_Insurance__c.Quote_Line_ItemId__c  , null)}</url>
+    </webLinks>
 </CustomObject>

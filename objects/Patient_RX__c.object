@@ -140,159 +140,157 @@
         <formFactor>Small</formFactor>
         <type>Default</type>
     </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
+    <allowInChatterGroups>true</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
+    <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
-    <label>Address</label>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <label>Patient Rx</label>
     <nameField>
-        <displayFormat>A-{0000000000}</displayFormat>
-        <label>Address Name</label>
+        <displayFormat>Rx-{000000000}</displayFormat>
+        <label>Rx Number</label>
+        <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Addresses</pluralLabel>
-    <searchLayouts>
-        <customTabListAdditionalFields>Address_Line1__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Address_Line2__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Address_Line3__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>City__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Country__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Postal_Code__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Provience__c</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>Address_Line1__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Address_Line2__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Address_Line3__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>City__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Country__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Postal_Code__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Provience__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Active__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Address_Line1__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Address_Line2__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Address_Line3__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Active__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>City__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Country__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Postal_Code__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Provience__c</lookupPhoneDialogsAdditionalFields>
-        <searchFilterFields>Address_Line1__c</searchFilterFields>
-        <searchFilterFields>Address_Line2__c</searchFilterFields>
-        <searchFilterFields>Address_Line3__c</searchFilterFields>
-        <searchFilterFields>City__c</searchFilterFields>
-        <searchFilterFields>Country__c</searchFilterFields>
-        <searchFilterFields>Postal_Code__c</searchFilterFields>
-        <searchFilterFields>Provience__c</searchFilterFields>
-        <searchResultsAdditionalFields>Address_Line1__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Address_Line2__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Address_Line3__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Active__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Country__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Postal_Code__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Provience__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>Private</sharingModel>
+    <pluralLabel>Patients Rx</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
     <fields>
-        <fullName>City__c</fullName>
-        <externalId>false</externalId>
-        <label>City</label>
-        <length>100</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Active__c</fullName>
+        <fullName>PRN__c</fullName>
         <defaultValue>false</defaultValue>
         <externalId>false</externalId>
-        <label>Active</label>
+        <label>PRN</label>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Country__c</fullName>
+        <fullName>Drug__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Country</label>
+        <label>Drug</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Patients Rx</relationshipLabel>
+        <relationshipName>Patients_Rx</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Picklist</type>
-        <valueSet>
-            <restricted>true</restricted>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>Canada</fullName>
-                    <default>false</default>
-                    <label>Canada</label>
-                </value>
-                <value>
-                    <fullName>USA</fullName>
-                    <default>false</default>
-                    <label>USA</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Provience__c</fullName>
+        <fullName>Contact__c</fullName>
         <externalId>false</externalId>
-        <label>Province</label>
-        <length>10</length>
-        <required>false</required>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Rx</relationshipLabel>
+        <relationshipName>Patients_Rx1</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Refills__c</fullName>
+        <externalId>false</externalId>
+        <label>Refills</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Postal_Code__c</fullName>
+        <fullName>Prescriber__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Postal Code</label>
-        <length>100</length>
+        <label>Prescriber</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.Prescriber__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Patients Rx</relationshipLabel>
+        <relationshipName>Patients_Rx</relationshipName>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Address_Line1__c</fullName>
+        <fullName>Refillable__c</fullName>
+        <defaultValue>false</defaultValue>
         <externalId>false</externalId>
-        <label>Address Line1</label>
-        <length>150</length>
-        <required>false</required>
+        <label>Refillable</label>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Checkbox</type>
     </fields>
     <fields>
-        <fullName>Address_Line2__c</fullName>
+        <fullName>Description__c</fullName>
         <externalId>false</externalId>
-        <label>Address Line2</label>
-        <length>120</length>
+        <label>Description</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>TextArea</type>
     </fields>
     <fields>
-        <fullName>Address_Line3__c</fullName>
+        <fullName>Expiry_Date__c</fullName>
         <externalId>false</externalId>
-        <label>Address Line3</label>
-        <length>150</length>
+        <label>Expiry Date</label>
         <required>false</required>
+        <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Rx_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Rx Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Refills_Remaining__c</fullName>
+        <externalId>false</externalId>
+        <label>Refills Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
         <unique>false</unique>
     </fields>
+    <webLinks>
+        <fullName>Go_To_Patient</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Go To Patient</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>{!URLFOR($Action.Contact.View, Patient_RX__c.ContactId__c, null)}</url>
+    </webLinks>
 </CustomObject>
