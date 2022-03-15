@@ -143,6 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>Other Medications</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -152,61 +153,31 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
-    <label>Address</label>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <label>OtherMedication</label>
     <nameField>
-        <displayFormat>A-{0000000000}</displayFormat>
-        <label>Address Name</label>
+        <displayFormat>OM-{0000000000}</displayFormat>
+        <label>Other Medications Id</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Addresses</pluralLabel>
-    <searchLayouts>
-        <customTabListAdditionalFields>Address_Line1__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Address_Line2__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Address_Line3__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>City__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Country__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Postal_Code__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Provience__c</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>Address_Line1__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Address_Line2__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Address_Line3__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>City__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Country__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Postal_Code__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Provience__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>Active__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Address_Line1__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Address_Line2__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Address_Line3__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Active__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>City__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Country__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Postal_Code__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>Provience__c</lookupPhoneDialogsAdditionalFields>
-        <searchFilterFields>Address_Line1__c</searchFilterFields>
-        <searchFilterFields>Address_Line2__c</searchFilterFields>
-        <searchFilterFields>Address_Line3__c</searchFilterFields>
-        <searchFilterFields>City__c</searchFilterFields>
-        <searchFilterFields>Country__c</searchFilterFields>
-        <searchFilterFields>Postal_Code__c</searchFilterFields>
-        <searchFilterFields>Provience__c</searchFilterFields>
-        <searchResultsAdditionalFields>Address_Line1__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Address_Line2__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Address_Line3__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Active__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Country__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Postal_Code__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Provience__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>Private</sharingModel>
+    <pluralLabel>OtherMedications</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
     <fields>
-        <fullName>City__c</fullName>
+        <fullName>DIN__c</fullName>
         <externalId>false</externalId>
-        <label>City</label>
+        <label>DIN #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drug__c</fullName>
+        <externalId>false</externalId>
+        <label>Drug</label>
         <length>100</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -214,17 +185,29 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Active__c</fullName>
-        <defaultValue>false</defaultValue>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
         <externalId>false</externalId>
-        <label>Active</label>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>OtherMedications</relationshipLabel>
+        <relationshipName>Other_Medications_Products</relationshipName>
+        <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
+        <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Country__c</fullName>
+        <fullName>End_Date__c</fullName>
         <externalId>false</externalId>
-        <label>Country</label>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Frequency</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -233,32 +216,70 @@
             <valueSetDefinition>
                 <sorted>false</sorted>
                 <value>
-                    <fullName>Canada</fullName>
+                    <fullName>Daily</fullName>
                     <default>false</default>
-                    <label>Canada</label>
+                    <label>Daily</label>
                 </value>
                 <value>
-                    <fullName>USA</fullName>
+                    <fullName>Monthly</fullName>
                     <default>false</default>
-                    <label>USA</label>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Weekly</fullName>
+                    <default>false</default>
+                    <label>Weekly</label>
+                </value>
+                <value>
+                    <fullName>Bedtime (qhs)</fullName>
+                    <default>false</default>
+                    <label>Bedtime (qhs)</label>
+                </value>
+                <value>
+                    <fullName>After meals</fullName>
+                    <default>false</default>
+                    <label>After meals</label>
+                </value>
+                <value>
+                    <fullName>Before meals</fullName>
+                    <default>false</default>
+                    <label>Before meals</label>
+                </value>
+                <value>
+                    <fullName>Every other week</fullName>
+                    <default>false</default>
+                    <label>Every other week</label>
+                </value>
+                <value>
+                    <fullName>Twice a day (BID)</fullName>
+                    <default>false</default>
+                    <label>Twice a day (BID)</label>
+                </value>
+                <value>
+                    <fullName>3 times a day (TID)</fullName>
+                    <default>false</default>
+                    <label>3 times a day (TID)</label>
+                </value>
+                <value>
+                    <fullName>4 times a day (QID)</fullName>
+                    <default>false</default>
+                    <label>4 times a day (QID)</label>
                 </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
     <fields>
-        <fullName>Provience__c</fullName>
+        <fullName>Start_Date__c</fullName>
         <externalId>false</externalId>
-        <label>Province</label>
-        <length>10</length>
+        <label>Start Date</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>Date</type>
     </fields>
     <fields>
-        <fullName>Postal_Code__c</fullName>
+        <fullName>Specify_Drug__c</fullName>
         <externalId>false</externalId>
-        <label>Postal Code</label>
+        <label>Specify Drug</label>
         <length>100</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -266,33 +287,26 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Address_Line1__c</fullName>
+        <fullName>Other_Medication__c</fullName>
         <externalId>false</externalId>
-        <label>Address Line1</label>
-        <length>150</length>
-        <required>false</required>
+        <label>Patient</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Other_Medications</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
         <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
-    <fields>
-        <fullName>Address_Line2__c</fullName>
-        <externalId>false</externalId>
-        <label>Address Line2</label>
-        <length>120</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>Address_Line3__c</fullName>
-        <externalId>false</externalId>
-        <label>Address Line3</label>
-        <length>150</length>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
+    <webLinks>
+        <fullName>Go_To_Patient</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Go To Patient</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>{!URLFOR($Action.Contact.View,  Other_Medications__c.Other_MedicationId__c , null)}</url>
+    </webLinks>
 </CustomObject>
